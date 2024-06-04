@@ -1,0 +1,15 @@
+
+## get developers
+GET http://localhost:3000/developers
+
+## get developer
+GET http://localhost:3000/developers/1
+
+## create developers
+PATCH http://localhost:3000/developers/1
+
+## post developers
+POST http://localhost:3000/developers
+
+## delete developers
+DELETE http://localhost:3000/developers/1
