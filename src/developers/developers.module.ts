@@ -1,9 +1,17 @@
-import { Module } from '@nestjs/common';
-import { DevelopersService } from './developers.service';
-import { DevelopersController } from './developers.controller';
+import { Module } from '@nestjs/common'; // Módulo principal do NestJS
+import { DevelopersService } from './developers.service'; // Serviço de desenvolvedores
+import { DevelopersController } from './developers.controller'; // Controlador de desenvolvedores
+import { TypeOrmModule } from '@nestjs/typeorm'; // Módulo TypeORM para conexão com o banco de dados
+import { Developer } from './entities/developer.entity'; // Entidade de desenvolvedor
 
+// Decorador @Module que indica que esta é uma classe de módulo
 @Module({
-  controllers: [DevelopersController],
-  providers: [DevelopersService],
+  imports: [
+    // Configuração do TypeORM para a entidade Developer
+    TypeOrmModule.forFeature([Developer])
+  ],
+  controllers: [DevelopersController], // Controladores deste módulo
+  providers: [DevelopersService], // Provedores de serviço deste módulo
 })
-export class DevelopersModule {}
+// Exportação da classe DevelopersModule
+export class DevelopersModule { }

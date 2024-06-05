@@ -1,15 +1,26 @@
-
-## get developers
+### list developers
 GET http://localhost:3000/developers
 
-## get developer
-GET http://localhost:3000/developers/1
+### get developer
+GET http://localhost:3000/developers/dev_VYZvx5-ht-Q0x9n4abhn2
 
-## create developers
-PATCH http://localhost:3000/developers/1
-
-## post developers
+### create developer
 POST http://localhost:3000/developers
+Content-Type: application/json
 
-## delete developers
-DELETE http://localhost:3000/developers/1
+{
+    "name": "John Doe",
+    "email": "john.doe@acme.com",
+    "dateOfBirth": "1990-01-01"
+}
+
+### update developer
+PATCH http://localhost:3000/developers/dev_DR4OEE2RADSsoU5p5ckK0
+Content-Type: application/json
+
+{
+    "email": "teste@acme.com"
+}
+
+### delete developer
+DELETE http://localhost:3000/developers/dev_VYZvx5-ht-Q0x9n4abhn2
